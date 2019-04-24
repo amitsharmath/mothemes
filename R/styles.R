@@ -9,8 +9,8 @@
 #   Test Package:              'Cmd + Shift + T'
 #   Build documentation        'Ctrl/Cmd + Shift + D'
 
-style_base<-function(){
-  font <- "Helvetica"
+style_base<-function(font='Helvetica'){
+
   ggplot2::theme(
     plot.title = ggplot2::element_text(family = font, face = "bold", color = "#222222"),
     plot.subtitle = ggplot2::element_text(family = font, margin = ggplot2::margin(9, 0, 9, 0)),
@@ -38,8 +38,8 @@ style_base<-function(){
     strip.text = ggplot2::element_text( hjust = 0))
 }
 
-style_base_dark<-function(){
-  font <- "Helvetica"
+style_base_dark<-function(font='Helvetica'){
+
   ggplot2::theme(
     plot.title = ggplot2::element_text(family = font, face = "bold", color = "white"),
     plot.subtitle = ggplot2::element_text(family = font, margin = ggplot2::margin(9, 0, 9, 0)),
@@ -69,14 +69,14 @@ style_base_dark<-function(){
     strip.text = ggplot2::element_text( hjust = 0,color = "white"))
 }
 
-style_slopegraph<-function(){
+style_slopegraph<-function(font='Helvetica'){
   ggplot2::theme(
     legend.position = "bottom",
     legend.text.align = 0,
     legend.background = ggplot2::element_blank(),
     legend.title = ggplot2::element_blank(),
     legend.key = ggplot2::element_blank(),
-    legend.text = ggplot2::element_text(color = "#222222"),
+    legend.text = ggplot2::element_text(family = font, color = "#222222"),
 
     panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb",size = .1),
     panel.grid.major.x = ggplot2::element_line(linetype = 2,color = "#cbcbcb" ),
