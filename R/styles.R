@@ -9,7 +9,10 @@
 #   Test Package:              'Cmd + Shift + T'
 #   Build documentation        'Ctrl/Cmd + Shift + D'
 
-style_base<-function(font='Helvetica'){
+style_base<-function(font='Helvetica',axis.title = T){
+
+  axis_title <- if (axis.title == T)
+    ggplot2::element_text(family = font, face = "bold", color = "#222222") else ggplot2::element_blank()
 
   ggplot2::theme(
     plot.title = ggplot2::element_text(family = font, face = "bold", color = "#222222"),
@@ -23,7 +26,7 @@ style_base<-function(font='Helvetica'){
     legend.key = ggplot2::element_blank(),
     legend.text = ggplot2::element_text(family = font, color = "#222222"),
 
-    axis.title = ggplot2::element_blank(),
+    axis.title = axis_title,
     axis.text = ggplot2::element_text(family = font,color = "#222222"),
     axis.text.x = ggplot2::element_text(margin = ggplot2::margin(5, b = 10)),
     axis.ticks = ggplot2::element_blank(),
@@ -38,7 +41,10 @@ style_base<-function(font='Helvetica'){
     strip.text = ggplot2::element_text( hjust = 0))
 }
 
-style_base_dark<-function(font='Helvetica'){
+style_base_dark<-function(font='Helvetica',axis.title = T){
+
+  axis_title <- if (axis.title == T)
+    ggplot2::element_text(family = font, face = "bold", color = "white") else ggplot2::element_blank()
 
   ggplot2::theme(
     plot.title = ggplot2::element_text(family = font, face = "bold", color = "white"),
@@ -52,7 +58,7 @@ style_base_dark<-function(font='Helvetica'){
     legend.key = ggplot2::element_blank(),
     legend.text = ggplot2::element_text(family = font, color = "white"),
 
-    axis.title = ggplot2::element_blank(),
+    axis.title = axis_title,
     axis.text = ggplot2::element_text(family = font,color = "white"),
     axis.text.x = ggplot2::element_text(margin = ggplot2::margin(5, b = 10)),
     axis.ticks = ggplot2::element_blank(),
