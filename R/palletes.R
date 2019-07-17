@@ -3,7 +3,8 @@
 #' examples
 #' pattete1()
 palettes <- list (
-  bbc = c("#FAAB18", "#1380A1","#990000", "#588300")
+  bbc = c("#FAAB18", "#1380A1","#990000", "#588300"),
+  anc = c("#9CBE30","#30BE99","#5230BE", "#BE3055")
 )
 
 
