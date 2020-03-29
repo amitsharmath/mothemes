@@ -19,7 +19,7 @@ style_base<-function(font='Helvetica',axis.title = T,fontsize = 12, title.fontsi
   }
 
   axis_title <- if (axis.title == T)
-    ggplot2::element_text(family = font, face = "bold", color = "#222222") else ggplot2::element_blank()
+    ggplot2::element_text(family = font, face = "bold", color = "#222222",size = fontsize) else ggplot2::element_blank()
 
   ggplot2::theme(
     plot.title = ggplot2::element_text(family = font, face = "bold", color = "#222222",size = title.fontsize),
