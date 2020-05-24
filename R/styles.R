@@ -10,7 +10,7 @@
 #   Build documentation        'Ctrl + Shift + D'
 
 
-style_base<-function(font='Helvetica',axis.title = T,fontsize = 12, title.fontsize=30,subtitle.fontsize=24){
+style_base<-function(font='Helvetica',axis.title = T,fontsize = 12, title.fontsize=30,subtitle.fontsize=24,caption.fontsize=8){
   if(missing(title.fontsize)){
     title.fontsize = 2.5 * fontsize
   }
@@ -24,7 +24,7 @@ style_base<-function(font='Helvetica',axis.title = T,fontsize = 12, title.fontsi
   ggplot2::theme(
     plot.title = ggplot2::element_text(family = font, face = "bold", color = "#222222",size = title.fontsize),
     plot.subtitle = ggplot2::element_text(family = font, margin = ggplot2::margin(9, 0, 9, 0), size = subtitle.fontsize),
-    plot.caption = ggplot2::element_blank(),
+    plot.caption = ggplot2::element_text(family = font, size = caption.fontsize),
 
     legend.position = "bottom",
     legend.text.align = 0,
@@ -45,7 +45,8 @@ style_base<-function(font='Helvetica',axis.title = T,fontsize = 12, title.fontsi
     panel.background = ggplot2::element_blank(),
 
     strip.background = ggplot2::element_rect(fill = "white"),
-    strip.text = ggplot2::element_text( hjust = 0))
+    strip.text = ggplot2::element_text( hjust = 0.5)
+    )
 }
 
 style_base_dark<-function(font='Helvetica',axis.title = T){
@@ -97,11 +98,6 @@ style_slopegraph<-function(font='Helvetica'){
   )
 }
 
-substyle_vert_spacer<-function(spacer_color = 'white',spacer_size = 1.5){
-  ggplot2::theme(
-    panel.ontop = T,
-    panel.grid.major.y = ggplot2::element_blank(),
-    panel.grid.major.x = ggplot2::element_line(color = spacer_color,linetype = 1,size = spacer_size),
-    #     panel.grid.minor.x = ggplot2::element_line(color = "white",linetype = 1,size = .3),
-  )
-}
+
+
+
